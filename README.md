@@ -1,632 +1,367 @@
-# AI-Based Gender Classification in MATLAB
+# 🎭 AI-Based Gender Classification in MATLAB
 
-An AI-powered gender classification system using deep learning and facial features. This project implements transfer learning with AlexNet in MATLAB to classify gender from facial images with high accuracy.
+> **Real-time gender classification using AlexNet transfer learning with an interactive GUI**
 
 ![MATLAB](https://img.shields.io/badge/MATLAB-R2020a+-orange.svg)
-![Deep Learning](https://img.shields.io/badge/Deep%20Learning-AlexNet-blue.svg)
-![License](https://img.shields.io/badge/License-MIT-green.svg)
+![Deep Learning](https://img.shields.io/badge/AlexNet-Transfer%20Learning-blue.svg)
+![Accuracy](https://img.shields.io/badge/Accuracy-100%25-success.svg)
 
-## 📋 Table of Contents
-- [Features](#features)
-- [System Showcase](#system-showcase)
-- [System Requirements](#system-requirements)
-- [Installation](#installation)
-- [Dataset Structure](#dataset-structure)
-- [Quick Start](#quick-start)
-- [Usage Guide](#usage-guide)
-- [Performance Analysis](#performance-analysis)
-- [GPU Support](#gpu-support)
-- [Python Preprocessing Tools](#python-preprocessing-tools)
-- [Troubleshooting](#troubleshooting)
-
-## ✨ Features
-
-- **Transfer Learning with AlexNet**: Leverages pre-trained AlexNet model for robust feature extraction
-- **Interactive GUI**: User-friendly interface for training, testing, and performance analysis
-- **Real-time Classification**: Fast gender prediction from facial images
-- **Performance Metrics**: Comprehensive evaluation with accuracy, confusion matrix, and ROC curves
-- **GPU Acceleration**: Optional GPU support for faster training and inference
-- **Automated Dataset Preparation**: Python tools for face extraction and dataset creation
+Built with MATLAB's Deep Learning Toolbox. Achieves **100% accuracy** on balanced datasets using transfer learning from pre-trained AlexNet. No model file included - train your own in minutes!
 
 ---
 
-## 🎨 System Showcase
+## 🚀 Quick Demo
 
-### 🚀 Complete AI-Powered Gender Classification System in Action
-
-Explore the intuitive three-panel interface that makes deep learning accessible:
-
+### Training Interface
 <div align="center">
+<img src="Ui Images/Training.jpeg" alt="Training Interface" width="800">
 
-### 📊 Training Phase - Transfer Learning with AlexNet
+*One-click training with real-time accuracy/loss visualization and sample image display*
+</div>
 
-<img src="Ui Images/Training.jpeg" alt="Training Interface" width="900">
-
-**Real-time Training Visualization**
-- 📈 Live accuracy tracking during model training
-- 📉 Loss curve monitoring for convergence analysis
-- 🖼️ Sample training images displayed in real-time
-- ⚙️ One-click training with transfer learning from pre-trained AlexNet
-- 💾 Automatic model saving upon completion
-
----
-
-### 🔬 Performance Analysis - Comprehensive Model Evaluation
-
+### Performance Analysis & Results
+<div align="center">
 <table>
 <tr>
-<td width="50%">
-
-#### 🎯 Perfect Classification Results
-<img src="Ui Images/analysis_1.jpeg" alt="Analysis Overview" width="100%">
-
-- ✅ **100% Accuracy** achieved
-- 📊 Confusion matrix visualization
-- 📈 ROC curve with AUC = 1.0
-- 🎯 Zero classification errors
-
-</td>
-<td width="50%">
-
-#### 📉 Training Metrics
-<img src="Ui Images/analysis_2.jpeg" alt="Training Metrics" width="100%">
-
-- 📊 Training accuracy progression
-- 📉 Loss reduction over epochs
-- ⚡ Convergence analysis
-- 🎓 Model learning visualization
-
-</td>
-</tr>
-
-<tr>
-<td width="50%">
-
-#### 🔍 Detailed Analysis View
-<img src="Ui Images/analysis_3.jpeg" alt="Detailed Analysis" width="100%">
-
-- 📋 Comprehensive performance metrics
-- 🎯 Per-class accuracy breakdown
-- 📊 Statistical evaluation
-- 🔬 In-depth model assessment
-
-</td>
-<td width="50%">
-
-#### 💯 Model Performance
-<img src="Ui Images/analysis_4.jpeg" alt="Model Performance" width="100%">
-
-- ✨ Model accuracy visualization
-- 📈 Error rate analysis
-- 🎯 Classification confidence
-- 📊 Performance statistics
-
-</td>
-</tr>
-
-<tr>
-<td colspan="2">
-
-#### 🎭 Complete System Interface
-<img src="Ui Images/analysis_5.jpeg" alt="Full System Interface" width="100%">
-
-**Three-Panel Workflow:**
-- 🎓 **Left Panel**: Training Process - Load/train AlexNet model with visual feedback
-- 🖼️ **Center Panel**: Testing Process - Upload images, detect faces, classify gender
-- 📊 **Right Panel**: Performance Analysis - View confusion matrix, ROC curves, and accuracy metrics
-
-</td>
+<td><img src="Ui Images/analysis_1.jpeg" alt="100% Accuracy" width="400"></td>
+<td><img src="Ui Images/analysis_4.jpeg" alt="Metrics" width="400"></td>
 </tr>
 </table>
 
+*Comprehensive evaluation: Confusion Matrix, ROC Curve (AUC=1.0), Training Metrics*
+
+<img src="Ui Images/analysis_5.jpeg" alt="Full Interface" width="800">
+
+*Complete three-panel workflow: Training → Testing → Performance Analysis*
 </div>
-
-### 🌟 Key Highlights
-
-| Feature | Description |
-|---------|-------------|
-| 🎯 **Accuracy** | Achieves 100% accuracy on balanced test datasets |
-| ⚡ **Speed** | Real-time classification with GPU acceleration |
-| 🎨 **Interface** | Clean, organized three-panel GUI for complete workflow |
-| 📊 **Visualization** | Comprehensive charts including confusion matrix, ROC curve, and training progress |
-| 🔧 **Ease of Use** | One-click training, testing, and performance analysis |
-| 💾 **Model Management** | Save and load trained models with ease |
 
 ---
 
-## 🖥️ System Requirements
+## ⚡ Quick Start (3 Steps)
 
-### MATLAB Requirements
-
-#### Required MATLAB Version
-- **MATLAB R2020a or later** (recommended: R2022a+)
-
-#### Required MATLAB Toolboxes
-The following toolboxes are **mandatory** for this project to run:
-
-1. **Deep Learning Toolbox**
-   - Core requirement for neural network training and inference
-   - License code: `nnet`
-
-2. **Computer Vision Toolbox**
-   - Required for image processing and augmentation
-   - License code: `vision`
-
-3. **Image Processing Toolbox**
-   - Essential for image manipulation and preprocessing
-   - License code: `images`
-
-4. **Statistics and Machine Learning Toolbox**
-   - Required for data analysis and performance metrics
-   - License code: `stats`
-
-#### Required Pre-trained Model
-- **Deep Learning Toolbox Model for AlexNet Network**
-  - This is a separate installation from the Deep Learning Toolbox
-  - Must be installed from MATLAB Add-On Explorer
-  - Required for transfer learning
-
-#### Optional (Recommended) Toolboxes
-
-5. **Parallel Computing Toolbox** *(Optional but recommended)*
-   - Enables GPU acceleration for training and inference
-   - Significantly speeds up computation time
-   - License code: `distcomp`
-   - **GPU Support Requirements**:
-     - CUDA-compatible NVIDIA GPU (Compute Capability 3.5+)
-     - CUDA Toolkit (version compatible with your MATLAB version)
-     - cuDNN library
-
-### Hardware Requirements
-
-#### Minimum Requirements
-- **CPU**: Intel i5 / AMD Ryzen 5 or better
-- **RAM**: 8 GB minimum
-- **Storage**: 2 GB free space
-- **Display**: 1280x720 minimum resolution
-
-#### Recommended for GPU Acceleration
-- **GPU**: NVIDIA GPU with 4GB+ VRAM (GTX 1050 Ti or better)
-- **RAM**: 16 GB
-- **Storage**: 5 GB free space (for dataset and models)
-
-### Operating System
-- Windows 10/11
-- macOS 10.14+
-- Linux (Ubuntu 18.04+)
-
-## 📦 Installation
-
-### Step 1: Install MATLAB Toolboxes
-
-1. Open MATLAB
-2. Go to **Home → Add-Ons → Get Add-Ons**
-3. Search for and install each of the following:
-   - Deep Learning Toolbox
-   - Computer Vision Toolbox
-   - Image Processing Toolbox
-   - Statistics and Machine Learning Toolbox
-   - Parallel Computing Toolbox *(optional, for GPU support)*
-
-### Step 2: Install AlexNet Model
-
-This is the most critical step - **AlexNet must be installed separately**:
-
-#### Method 1: Automatic Installation (Recommended)
 ```matlab
-% Run this in MATLAB Command Window
-net = alexnet;
+% 1. Run automatic setup and launch GUI
+run_project
+
+% 2. In the GUI: Click "Training Process" to train the model (~5-10 min)
+
+% 3. Click "Browse Test Image" → "Testing Process" to classify
 ```
-This will prompt automatic installation of AlexNet if not already installed.
 
-#### Method 2: Manual Installation
-1. Go to **Home → Add-Ons → Get Add-Ons**
-2. Search for: **"Deep Learning Toolbox Model for AlexNet Network"**
-3. Click **Install**
-4. Wait for the installation to complete
+**That's it!** The system handles everything: dataset validation, model training, and GUI setup.
 
-### Step 3: Verify Installation
+---
 
-Run the requirements checker:
+## 📋 Requirements
+
+| Component | Version | Required |
+|-----------|---------|----------|
+| **MATLAB** | R2020a+ | ✅ Yes |
+| **Deep Learning Toolbox** | Latest | ✅ Yes |
+| **Computer Vision Toolbox** | Latest | ✅ Yes |
+| **Image Processing Toolbox** | Latest | ✅ Yes |
+| **Statistics Toolbox** | Latest | ✅ Yes |
+| **AlexNet Model** | Latest | ✅ Yes |
+| **Parallel Computing Toolbox** | Latest | ⚡ Optional (GPU) |
+| **NVIDIA GPU (CUDA)** | Compute 3.5+ | ⚡ Optional (5-10x faster) |
+
+### Installing AlexNet (Critical!)
+
+AlexNet is a **separate download** from Deep Learning Toolbox:
+
 ```matlab
-checkRequirements
+% Method 1: Trigger auto-install
+alexnet
+
+% Method 2: Manual install
+% Home → Add-Ons → Get Add-Ons → Search "AlexNet" → Install
 ```
 
-You should see:
-```
-✓ Deep Learning Toolbox - INSTALLED
-✓ Computer Vision Toolbox - INSTALLED
-✓ Image Processing Toolbox - INSTALLED
-✓ Statistics and Machine Learning Toolbox - INSTALLED
-✓ AlexNet is available and loaded successfully!
-
-=== System Ready! ===
+Verify installation:
+```matlab
+checkRequirements  % Runs full system check
 ```
 
-### Step 4: GPU Setup (Optional)
+---
 
-If you want to use GPU acceleration:
+## 📁 Dataset Setup
 
-1. **Verify GPU Availability**:
-   ```matlab
-   gpuDevice
-   ```
+Create this folder structure with your face images:
 
-2. **Check CUDA/cuDNN installation**:
-   ```matlab
-   canUseGPU()
-   ```
+```
+project/
+├── dataset/           ← Training images (80%)
+│   ├── male/          (500+ JPG images recommended)
+│   └── female/        (500+ JPG images recommended)
+└── test/              ← Testing images (20%)
+    ├── male/          (50+ JPG images)
+    └── female/        (50+ JPG images)
+```
 
-3. If GPU is not detected, install:
-   - [CUDA Toolkit](https://developer.nvidia.com/cuda-downloads)
+**Dataset Guidelines:**
+- **Format:** JPG/PNG (JPG preferred)
+- **Size:** Minimum 227×227px (AlexNet input)
+- **Content:** Clear frontal faces, one person per image
+- **Balance:** Equal male/female counts for best results
+
+**Auto-create test split:**
+```matlab
+createTestDatasetSplit  % Randomly splits dataset/ → test/
+```
+
+### 🐍 Optional: Python Face Extraction Tool
+
+If you have raw images/videos, use the included Python tool to extract and classify faces:
+
+```bash
+cd "AI_Gender_Detection_System"
+pip install -r requirements.txt
+python datasetPrepration.py  # Extracts faces using MTCNN + DeepFace
+```
+
+See [`AI_Gender_Detection_System/README.md`](AI_Gender_Detection_System/README.md) for details.
+
+---
+
+## 🎯 Complete Usage Guide
+
+### 1️⃣ Launch the System
+
+```matlab
+run_project  % Automatic setup + GUI launch
+```
+
+Or manually:
+```matlab
+GenderDetectionGUI  % Direct GUI launch
+```
+
+### 2️⃣ Train the Model
+
+**In GUI Left Panel (Training Process):**
+
+1. Click **"Training Process"** button
+2. Watch real-time training:
+   - Accuracy curve (should reach ~95%+)
+   - Loss curve (should decrease steadily)
+   - Sample training images
+3. Wait ~5-10 minutes (depends on dataset size & GPU)
+4. Model auto-saves as `trained_model.mat`
+
+**Training Parameters (in `trainGenderClassifier.m`):**
+```matlab
+Learning Rate:   0.0001
+Epochs:          10
+Batch Size:      32
+Optimizer:       Adam
+L2 Regularization: 0.0001
+```
+
+**Load Existing Model:**
+- Click **"Load Network"** → Select `trained_model.mat`
+
+> ⚠️ **Note:** `trained_model.mat` is NOT included in this repo (file too large for Git). You must train your own model - it only takes 5-10 minutes!
+
+### 3️⃣ Test/Classify Images
+
+**In GUI Center Panel (Testing Process):**
+
+1. Click **"Browse Test Image"** → Select a face image
+2. Click **"Testing Process"**
+3. View results:
+   - **Test Image:** Original upload
+   - **Face Detection:** Detected face region
+   - **ROI Region:** Cropped face
+   - **Preprocessed:** Resized 227×227 for AlexNet
+   - **Classification Result:** MALE or FEMALE with confidence score
+
+### 4️⃣ Evaluate Performance
+
+**In GUI Right Panel (Performance Analysis):**
+
+1. Click **"Performance Analysis"** button
+2. System evaluates on entire `test/` folder
+3. View comprehensive metrics:
+   - **Confusion Matrix:** True/False Positives & Negatives
+   - **ROC Curve:** AUC score (1.0 = perfect)
+   - **Model Accuracy:** Overall % and error rate
+   - **Training Loss:** Convergence visualization
+
+**Expected Results:**
+- Accuracy: **95-100%** on balanced datasets
+- AUC: **>0.95** (1.0 = perfect binary classifier)
+- Training Time: **5-10 min** (CPU) / **1-2 min** (GPU)
+
+---
+
+## 🎓 How It Works (Transfer Learning)
+
+```
+Pre-trained AlexNet (ImageNet: 1.2M images, 1000 classes)
+         ↓
+    [Conv Layers 1-5] ← Frozen (extract low-level features)
+         ↓
+    [FC Layers 6-7]   ← Fine-tuned on your dataset
+         ↓
+    [FC Layer 8]      ← NEW: 2 classes (Male/Female)
+         ↓
+      Softmax → [Male, Female] probabilities
+```
+
+**Why Transfer Learning?**
+- ✅ Requires minimal training data (500+ images vs. millions)
+- ✅ Trains fast (minutes vs. days)
+- ✅ Achieves high accuracy (95-100%)
+- ✅ Pre-learned features (edges, textures, shapes)
+
+---
+
+## ⚡ GPU Acceleration (Optional)
+
+**Enable GPU for 5-10x faster training:**
+
+1. **Check GPU availability:**
+```matlab
+gpuDevice  % Shows GPU info
+canUseGPU  % Returns true/false
+```
+
+2. **Install CUDA + cuDNN:**
+   - [CUDA Toolkit](https://developer.nvidia.com/cuda-downloads) (match your MATLAB version)
    - [cuDNN Library](https://developer.nvidia.com/cudnn)
 
-## 📁 Dataset Structure
+3. **GPU auto-detected in training** (if Parallel Computing Toolbox installed)
 
-The project expects the following folder structure:
+**Performance:**
+- CPU (i5/i7): ~5-10 min training
+- GPU (GTX 1050+): ~1-2 min training
 
-```
-Ai_Based_GenderClassification_inMATLAB/
-│
-├── dataset/                      # Training dataset
-│   ├── male/                     # Male face images
-│   │   ├── male_001.jpg
-│   │   ├── male_002.jpg
-│   │   └── ...
-│   └── female/                   # Female face images
-│       ├── female_001.jpg
-│       ├── female_002.jpg
-│       └── ...
-│
-├── test/                         # Testing dataset
-│   ├── male/                     # Male test images
-│   └── female/                   # Female test images
-│
-├── trained_model.mat             # Saved trained model (generated)
-│
-└── *.m                           # MATLAB scripts
-```
+---
 
-### Dataset Guidelines
-- **Image Format**: JPG, PNG (JPG recommended)
-- **Image Size**: Minimum 227x227 pixels (AlexNet input size)
-- **Face Quality**: Clear, frontal faces work best
-- **Recommended Training Images**: 500+ per class
-- **Recommended Test Images**: 50+ per class
+## 🛠️ Project Files
 
-## 🚀 Quick Start
+| File | Purpose |
+|------|---------|
+| `run_project.m` | 🚀 **START HERE** - Auto setup + GUI |
+| `GenderDetectionGUI.m` | Main application GUI |
+| `trainGenderClassifier.m` | AlexNet training logic |
+| `classifyGender.m` | Single image classification |
+| `evaluateModel.m` | Performance metrics |
+| `checkRequirements.m` | Verify MATLAB setup |
+| `plotConfusionMatrix.m` | Confusion matrix viz |
+| `plotROCCurve.m` | ROC curve plotting |
+| `trained_model.mat` | **YOU CREATE THIS** (not in repo) |
 
-### Option 1: Complete Setup and Launch (Recommended)
+---
 
-Double-click or run in MATLAB:
+## 🐛 Troubleshooting
+
+<details>
+<summary><b>❌ "AlexNet not found"</b></summary>
+
+AlexNet is a separate install:
 ```matlab
-run_project
+alexnet  % Auto-install
+% OR: Home → Add-Ons → Search "AlexNet" → Install
 ```
+</details>
 
-This will:
-1. Check all requirements
-2. Prepare the dataset
-3. Launch the GUI automatically
-
-### Option 2: Manual Launch
+<details>
+<summary><b>❌ "Toolbox not installed"</b></summary>
 
 ```matlab
-% 1. Check requirements first
-checkRequirements
-
-% 2. Prepare dataset (if needed)
-prepareDataset
-
-% 3. Launch GUI
-GenderDetectionGUI
+checkRequirements  % See what's missing
 ```
+Install from: Home → Add-Ons → Get Add-Ons
+</details>
 
-### Option 3: Complete Setup Script
+<details>
+<summary><b>❌ "Out of memory"</b></summary>
+
+Reduce batch size in `trainGenderClassifier.m`:
+```matlab
+'MiniBatchSize', 16  % Change from 32 to 16
+```
+</details>
+
+<details>
+<summary><b>❌ "Dataset folder not found"</b></summary>
+
+Create `dataset/male/` and `dataset/female/` folders with face images.
+</details>
+
+<details>
+<summary><b>⚡ GPU not detected</b></summary>
 
 ```matlab
-setupAndRun
+gpuDevice  % Check if GPU seen
 ```
+Install CUDA Toolkit + cuDNN. Or train on CPU (still works, just slower).
+</details>
 
-## 📖 Usage Guide
+---
 
-### Training the Model
+## 📊 Performance Metrics Explained
 
-1. **Launch the GUI**: Run `GenderDetectionGUI`
+| Metric | What It Means | Target |
+|--------|---------------|--------|
+| **Accuracy** | % correctly classified | >95% |
+| **Precision** | Of predicted males, % actually male | >90% |
+| **Recall** | Of actual males, % correctly identified | >90% |
+| **F1-Score** | Balance of precision & recall | >0.90 |
+| **AUC** | Area under ROC curve | >0.95 |
+| **Confusion Matrix** | True/False Positive/Negative counts | Diagonal high |
 
-2. **Start Training**:
-   - Click **"Training Process"** button
-   - The system will:
-     - Load AlexNet pre-trained model
-     - Prepare your dataset (from `dataset/` folder)
-     - Perform data augmentation
-     - Fine-tune the network using transfer learning
-     - Display training progress (accuracy and loss curves)
-     - Save the trained model as `trained_model.mat`
+---
 
-3. **Training Parameters** (configurable in `trainGenderClassifier.m`):
-   - Initial Learning Rate: 0.0001
-   - Max Epochs: 10
-   - Mini-batch Size: 32
-   - Validation Frequency: 10
-   - L2 Regularization: 0.0001
+## 🎯 Tips for Best Results
 
-4. **Monitor Training**:
-   - View real-time accuracy plot
-   - View real-time loss plot
-   - See sample training images
-   - Read status updates
+1. **Balanced Dataset:** Equal male/female images (500+ each)
+2. **Quality Images:** Clear, frontal faces with good lighting
+3. **Consistent Size:** All images >227×227px
+4. **No Duplicates:** Avoid identical/very similar images in train & test
+5. **Diverse Dataset:** Various ages, ethnicities, expressions
+6. **GPU Training:** 5-10x faster if available
 
-### Loading a Pre-trained Model
-
-If you already have a trained model:
-1. Click **"Load Network"** button
-2. Select your `trained_model.mat` file
-3. The model is ready for testing
-
-### Testing/Classification
-
-1. **Ensure Model is Loaded**:
-   - Either train a new model OR load an existing one
-
-2. **Select Test Image**:
-   - Click **"Browse Test Image"**
-   - Choose a face image (JPG/PNG)
-   - The image will be displayed
-
-3. **Classify**:
-   - Click **"Testing Process"**
-   - View the prediction: **MALE** or **FEMALE**
-   - See the confidence score
-
-### Performance Analysis
-
-1. **Run Evaluation**:
-   - Click **"Performance Analysis"** button
-   - The system will:
-     - Evaluate the model on test dataset (`test/` folder)
-     - Generate confusion matrix
-     - Plot ROC curve
-     - Calculate accuracy metrics
-
-2. **View Metrics**:
-   - Overall Accuracy
-   - Precision, Recall, F1-Score per class
-   - Confusion Matrix visualization
-   - ROC Curve and AUC
-
-## 📊 Performance Analysis
-
-The system provides comprehensive performance metrics:
-
-### Confusion Matrix
-- True Positives / True Negatives
-- False Positives / False Negatives
-- Per-class accuracy
-
-### ROC Curve
-- Receiver Operating Characteristic curve
-- Area Under Curve (AUC) score
-- Optimal threshold visualization
-
-### Classification Metrics
-- **Accuracy**: Overall classification accuracy
-- **Precision**: Positive predictive value
-- **Recall**: True positive rate (Sensitivity)
-- **F1-Score**: Harmonic mean of precision and recall
-
-## 🚀 GPU Support
-
-### Enabling GPU Acceleration
-
-GPU support is **automatic** if you have:
-1. Parallel Computing Toolbox installed
-2. CUDA-compatible NVIDIA GPU
-3. Properly configured CUDA/cuDNN
-
-### Verification
-
-```matlab
-% Check GPU availability
-gpuDevice
-
-% Expected output:
-% CUDADevice with properties:
-%   Name: 'NVIDIA GeForce ...'
-%   Index: 1
-%   ComputeCapability: '7.5'
-%   ...
-```
-
-### Performance Benefits
-- **Training Speed**: 5-10x faster with GPU
-- **Inference Speed**: 3-5x faster with GPU
-- **Batch Processing**: Handle larger mini-batches
-
-### GPU Memory Requirements
-- Minimum: 2 GB VRAM
-- Recommended: 4 GB+ VRAM
-
-## 🐍 Python Preprocessing Tools
-
-Optional Python utilities for face extraction and dataset preparation.
-
-### Purpose
-- Extract faces from images/videos using MTCNN
-- Classify faces by gender using DeepFace
-- Automatically organize into male/female folders
-- Create test dataset splits
-
-### Python Setup (Optional)
-
-1. **Activate Virtual Environment** (if exists):
-   ```powershell
-   .\.venv\Scripts\Activate.ps1
-   ```
-
-2. **Install Dependencies**:
-   ```bash
-   cd AI_Gender_Detection_System
-   pip install -r requirements.txt
-   ```
-
-3. **Run Face Extraction**:
-   ```bash
-   python datasetPrepration.py
-   ```
-
-4. **Create Test Dataset**:
-   ```bash
-   python create_test_dataset.py
-   ```
-
-### Python Requirements
-See `AI_Gender_Detection_System/requirements.txt` for:
-- OpenCV (face detection)
-- PyTorch + facenet-pytorch (MTCNN)
-- TensorFlow + DeepFace (gender classification)
-
-**Note**: Python tools are **optional** - the main MATLAB project works independently.
-
-## 🔧 Troubleshooting
-
-### Issue: "AlexNet not found"
-
-**Solution**:
-```matlab
-% Run this to trigger automatic installation
-alexnet
-```
-Or manually install from Add-On Explorer (see Installation Step 2).
-
-### Issue: "Toolbox not installed"
-
-**Solution**:
-Run `checkRequirements` to see which toolboxes are missing, then install from Add-On Explorer.
-
-### Issue: "GPU not detected"
-
-**Diagnosis**:
-```matlab
-gpuDevice  % Should show GPU info
-```
-
-**Solutions**:
-- Install/update NVIDIA GPU drivers
-- Install CUDA Toolkit compatible with your MATLAB version
-- Install cuDNN library
-- Verify GPU is CUDA-compatible (Compute Capability 3.5+)
-
-### Issue: "Out of memory during training"
-
-**Solutions**:
-1. Reduce mini-batch size in `trainGenderClassifier.m`:
-   ```matlab
-   options = trainingOptions('adam', ...
-       'MiniBatchSize', 16, ...  % Reduce from 32
-       ...
-   ```
-
-2. If using GPU, try CPU instead:
-   ```matlab
-   options = trainingOptions('adam', ...
-       'ExecutionEnvironment', 'cpu', ...
-       ...
-   ```
-
-### Issue: "Dataset folder not found"
-
-**Solution**:
-Ensure you have created:
-```
-dataset/
-  ├── male/      (with male face images)
-  └── female/    (with female face images)
-```
-
-### Issue: "Test images not found"
-
-**Solution**:
-```matlab
-% Auto-create test split from dataset
-createTestDatasetSplit
-```
-
-## 📝 Project Files
-
-### Main MATLAB Scripts
-- **`run_project.m`** - Quick start script (run this first!)
-- **`setupAndRun.m`** - Complete setup with GUI launch
-- **`GenderDetectionGUI.m`** - Main GUI application
-- **`checkRequirements.m`** - Verify toolbox installation
-- **`trainGenderClassifier.m`** - Model training logic
-- **`classifyGender.m`** - Single image classification
-- **`evaluateModel.m`** - Model performance evaluation
-- **`prepareDataset.m`** - Dataset validation
-- **`plotConfusionMatrix.m`** - Confusion matrix visualization
-- **`plotROCCurve.m`** - ROC curve plotting
-- **`displayAccuracyMetrics.m`** - Metrics display
-- **`createTestDatasetSplit.m`** - Auto-create test dataset
-
-### Python Scripts (Optional)
-- **`AI_Gender_Detection_System/datasetPrepration.py`** - Face extraction
-- **`AI_Gender_Detection_System/create_test_dataset.py`** - Test set creation
-- **`AI_Gender_Detection_System/requirements.txt`** - Python dependencies
-
-## 🎯 Key Features of AlexNet Transfer Learning
-
-### Why AlexNet?
-- **Pre-trained on ImageNet**: 1.2 million images, 1000 classes
-- **Proven Architecture**: Winner of ImageNet 2012 competition
-- **Good Feature Extraction**: 5 convolutional layers + 3 fully connected layers
-- **Fast Training**: Transfer learning requires minimal epochs
-- **MATLAB Support**: Native support in Deep Learning Toolbox
-
-### Transfer Learning Process
-1. **Load Pre-trained AlexNet**: Pre-trained weights from ImageNet
-2. **Replace Final Layers**: Modify for 2-class classification (male/female)
-3. **Freeze Early Layers**: Keep low-level feature extractors
-4. **Fine-tune**: Train only final layers on gender dataset
-5. **Result**: High accuracy with minimal training data
-
-### Model Architecture
-```
-Input (227x227x3)
-   ↓
-Conv1-5 (Pre-trained features) ← Frozen
-   ↓
-FC6-FC7 (Pre-trained) ← Fine-tuned
-   ↓
-FC8 (New: 2 classes) ← Trained from scratch
-   ↓
-Softmax → Output: [Male, Female]
-```
+---
 
 ## 📄 License
 
-This project is licensed under the MIT License.
+MIT License - Free to use, modify, and distribute.
 
-## 👥 Contributing
+---
 
-Contributions are welcome! Please feel free to submit issues or pull requests.
+## 🤝 Contributing
 
-## 📧 Support
+Issues and pull requests welcome! This project demonstrates:
+- ✅ MATLAB Deep Learning Toolbox
+- ✅ Transfer learning with pre-trained CNNs
+- ✅ GUI development in MATLAB
+- ✅ Computer vision preprocessing
+- ✅ Model evaluation & visualization
 
-For issues or questions:
-1. Check the [Troubleshooting](#troubleshooting) section
-2. Review MATLAB documentation for specific toolboxes
-3. Open an issue on the project repository
+---
 
 ## 🎓 Citation
 
-If you use this project in your research, please cite:
-
-```
-AI-Based Gender Classification using AlexNet Transfer Learning
-MATLAB Implementation, 2026
+```bibtex
+@software{ai_gender_classification_matlab,
+  title={AI-Based Gender Classification using AlexNet Transfer Learning},
+  author={Your Name},
+  year={2026},
+  language={MATLAB},
+  note={Deep Learning Toolbox implementation}
+}
 ```
 
 ---
 
-**Happy Classifying! 🎉**
+<div align="center">
 
-*Built with ❤️ using MATLAB Deep Learning Toolbox*
+### ⭐ Star this repo if it helped you!
+
+**Built with ❤️ using MATLAB Deep Learning Toolbox**
+
+[Report Bug](../../issues) · [Request Feature](../../issues) · [Documentation](../../wiki)
+
+</div>
