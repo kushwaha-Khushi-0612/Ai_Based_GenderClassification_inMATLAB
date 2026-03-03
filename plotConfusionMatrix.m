@@ -23,7 +23,7 @@ function plotConfusionMatrix(confMat, ax)
     set(ax, 'YTick', 1:size(confMat, 1));
     set(ax, 'XTickLabel', {'Female', 'Male'});
     set(ax, 'YTickLabel', {'Female', 'Male'});
-    set(ax, 'FontSize', 9, 'TickLabelColor', 'black');
+    set(ax, 'FontSize', 9);
     xlabel(ax, 'Predicted Class', 'FontSize', 10, 'FontWeight', 'bold', 'Color', 'black');
     ylabel(ax, 'True Class', 'FontSize', 10, 'FontWeight', 'bold', 'Color', 'black');
     title(ax, 'Confusion Matrix', 'FontSize', 11, 'FontWeight', 'bold', 'Color', [0 0.3 0.6]);

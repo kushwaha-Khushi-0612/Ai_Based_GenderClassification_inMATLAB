@@ -12,7 +12,7 @@ function displayAccuracyMetrics(accuracy, ax)
     
     set(ax, 'Color', 'white', 'XColor', 'black', 'YColor', 'black', 'Box', 'on');
     set(ax, 'XTickLabel', {'Accuracy', 'Error'});
-    set(ax, 'FontSize', 10, 'TickLabelColor', 'black');
+    set(ax, 'FontSize', 10);
     ylabel(ax, 'Percentage', 'FontSize', 10, 'FontWeight', 'bold', 'Color', 'black');
     title(ax, sprintf('Model Accuracy: %.2f%%', accuracy*100), ...
           'FontSize', 11, 'FontWeight', 'bold', 'Color', [0 0.3 0.6]);
