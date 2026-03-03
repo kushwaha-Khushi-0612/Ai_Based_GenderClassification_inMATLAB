@@ -347,7 +347,7 @@ Issues and pull requests welcome! This project demonstrates:
 ```bibtex
 @software{ai_gender_classification_matlab,
   title={AI-Based Gender Classification using AlexNet Transfer Learning},
-  author={Your Name},
+  author={Khushi Kushwaha},
   year={2026},
   language={MATLAB},
   note={Deep Learning Toolbox implementation}
